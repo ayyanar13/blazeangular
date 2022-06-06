@@ -1,0 +1,45 @@
+<div class="container-fluid d-flex justify-content-center list-container">
+    <div class="container p-0">
+        <div class="welcome-text">SIGN UP!</div>
+        <div class="container-fluid p-0 d-flex justify-content-center mt-5 mb-5">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="container login-container">
+                <div class="form-group login-input mt-4">
+                    <label>FIRST NAME</label>
+                    <input type="text" name="firstName" placeholder="ENTER FIRST NAME" formControlName="firstName">
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">ENTER FIRST NAME</div>
+                    </div>
+                </div>
+                <div class="form-group login-input mt-4">
+                    <label>LAST NAME</label>
+                    <input type="text" name="lastName" placeholder="ENTER LAST NAME" formControlName="lastName">
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">ENTER LAST NAME</div>
+                    </div>
+                </div>
+                <div class="form-group login-input mt-4">
+                    <label>EMAIL ADDRESS</label>
+                    <input type="email" id="email" name="email" placeholder="ENTER EMAIL ADDRESS" formControlName="email">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">EMAIL ADDRESS</div>
+                    </div>
+                </div>
+                <div class="form-group login-input mt-4">
+                    <label>PHONE_NUMBER</label>
+                    <br>
+                    <ngx-intl-tel-input [cssClass]="'form-control'" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                        [selectFirstCountry]="false" [selectedCountryISO]="selectedCountry" [phoneValidation]="true" name="phone"
+                        formControlName="phone"  [separateDialCode]="separateDialCode">
+                    </ngx-intl-tel-input>
+                    <br>
+                    <span class="optional-text">OPTIONAL</span>
+                </div>
+
+                <div class="text-center mt-5" >
+                    <button [disabled]='clicked' type="submit" class="login-button p-2 pl-5 pr-5">SUBMIT</button>
+                </div>\
+            </form>
+        </div>
+        
+    </div>
+</div>

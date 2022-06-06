@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">TEST SITE</a>      
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav navbar-right pr-4">
+                <li *ngIf="!loggedin"  class="dropdown pr-2 position-relative d-none d-lg-block">
+                    <a #loginA class="dropdown-toggle nav-link main-dropdown" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                        <i class="fa fa-user pr-2 user-icon" aria-hidden="true"></i>
+                        <span class="head-text pl-2">user</span>
+                    </a>
+                    <div #loginDiv  class="dropdown-menu login-dropdown" aria-labelledby="navbarDropdown">                       
+                        <a class="dropdown-item dropdown-text content-title ml-2" (click)="Login()">login</a>
+                        <div class="dropdown-divider"></div>
+                         <a class="dropdown-item dropdown-text content-title ml-2"  (click)="signup()">signup</a>
+                         </div>
+                </li>
+                <li *ngIf="loggedin"  class="dropdown pr-2 position-relative d-none d-lg-block">
+                    <a #loginA class="dropdown-toggle nav-link main-dropdown" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                        <i class="fa fa-user pr-2 user-icon" aria-hidden="true"></i>
+                        <span class="head-text pl-2">{{loggedUser.name.first_name}} {{  loggedUser.name.last_name}}</span>
+                    </a>
+                    <div #loginDiv  class="dropdown-menu content-title login-dropdown" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item dropdown-text content-title ml-2"  (click)="userlist()">User list</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item dropdown-text ml-2" (click)="logout()">logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

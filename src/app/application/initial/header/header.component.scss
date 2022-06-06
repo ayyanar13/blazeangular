@@ -1,0 +1,22 @@
+    
+.navbar {
+    padding: 10px;
+    margin-bottom: 10px;
+      .navbar-brand {
+      margin-right: 30px;
+      font-size: 30px;
+      letter-spacing: 1px;
+      color: #ED5D2A;
+      font-weight: 500;
+    } 
+    .nav-item {
+      font-size: 14px;
+    }
+  }
+  .navbar-nav {
+    margin-left: auto;
+    padding: 10px;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #ED5D2A;
+}

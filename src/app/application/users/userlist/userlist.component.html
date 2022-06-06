@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>User List</h2>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>phone</th>
+                <th (click) =sorting(sort)>Email <i class="fa fa-fw fa-sort"></i></th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of userlist; let i=index">
+                <td>{{item.name.first_name}}</td>
+                <td>{{item.name.last_name}}</td>
+                <td>{{item.phone.code}} {{item.phone.number}}</td>
+                <td>{{item.email}}</td>
+                <td> <span [ngSwitch]="item.status">
+                        <p *ngSwitchCase="1">
+                            <span class="badge badge-success">Active</span>
+                        </p>
+                        <p *ngSwitchCase="2">
+                            <span class="badge badge-warning">Inactive</span>
+                        </p>
+                        <p *ngSwitchDefault>
+                            <span class="badge badge-danger">Delete</span>
+                        </p>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-xs-12 col-12">
+            <pagination [boundaryLinks]="true" [(ngModel)]="currentPage" [totalItems]="totalCount"
+                (pageChanged)="pageChanged($event)"></pagination>
+        </div>
+    </div>
+</div>

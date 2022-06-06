@@ -1,0 +1,105 @@
+.login-banner {
+    height: 160px;
+    width: 154px;
+}
+
+.welcome-text {
+    font-size: 19px;
+    color: #ED5D2A;
+    font-family: 'roboto-light';
+    text-align: center;
+}
+
+.login-input input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    box-shadow: inset 0 0 10px 0 rgba(221, 221, 221, 0.5);
+    border: none;
+    border-radius: 6px;
+    height: 46px;
+    padding: 0 27px;
+    font-size: 16px;
+}
+
+.login-input input[type=checkbox] {
+    border: none;
+    box-shadow: inset 0 0 10px 0 #DE4500;
+    border-radius: 6px;
+    height: 20px;
+    width: 20px;
+    line-height: 2.1ex;
+}
+
+::ng-deep .login-input input[type=tel] {
+  border: none;
+  box-shadow: inset 0 0 10px 0 rgba(221, 221, 221, 0.5);
+  border-radius: 6px;
+  height: 46px;
+  width: 100%;
+  margin-right: 14em;
+}
+
+span.optional-text {
+  font-size: 14px;
+  color: #17A398;
+}
+
+.login-container {
+    max-width: 500px;
+}
+
+.login-button {
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    background-color: #ED5D2A;
+    font-size: 19px;
+    font-family: 'roboto-light';
+    font-weight: 800;
+}
+
+.login-min-text {
+    font-size: 16px;
+    color: #2E353A;
+    font-family: 'roboto-light';
+    text-decoration: underline;
+}
+
+.register-intro-text {
+    font-family: 'roboto-light';
+    color: #2E353A;
+    font-size: 18px;
+    text-align: center;
+}
+
+label .phone_label {
+    display: inline-block!important;
+}
+
+.iti .iti--allow-dropdown{
+    display: block!important;
+}
+input #tel{
+    display: block!important;
+}
+
+.reg {
+  width: 154px!important;
+  height: 149px!important;
+}
+
+.error-msg{
+width: 100%;
+margin-top: 0.25rem;
+font-size: 80%;
+color: #dc3545;
+
+}
+
+::ng-deep .invalid-feedback {
+  display: inline!important;
+}
+@media only screen and (max-width: 768px) {
+  .welcome-text{
+    padding-top:10%;
+  }
+}

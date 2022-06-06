@@ -1,0 +1,23 @@
+<div class="container-fluid d-flex justify-content-center list-container">
+    <div class="spinner" *ngIf="loading"></div>
+    <div class="container p-0">
+        <div class="welcome-text">Welcome back!</div>
+        <div class="container-fluid p-0 d-flex justify-content-center mt-5 mb-5">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="container login-container">
+                <div class="form-group login-input">
+                    <label>EMAIL</label>
+                    <input type="email" 
+                     name="email" placeholder="ENTER EMAIL ID" formControlName="email">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback d-block">
+                        <div *ngIf="f.email.errors.required">EMAIL IS REQUIRED</div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <button type="submit" class="login-button p-2 pl-5 pr-5">LOGIN</button>
+                </div>
+                <div class="d-inline-block login-min-text mt-3" (click)="signup()">register</div>
+            </form>
+        </div>
+        
+    </div>
+</div>
